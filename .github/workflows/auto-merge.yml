@@ -1,0 +1,26 @@
+name: Auto Merge to Develop
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Check commit message and merge
+      run: |
+        COMMIT_MSG=$(git log -1 --pretty=%B)
+        if [[ $COMMIT_MSG == *"[ready for deploy]"* ]]; then
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout develop
+          git merge --no-ff ${{ github.ref }}
+          git push origin develop
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GHT_TOKEN }}

@@ -1,23 +1,22 @@
-# Plataforma (appname): Reciclaje, Recompensas y Comunidad Sostenible
+# Plataforma (EcoConnect): Reciclaje, Recompensas y Comunidad Sostenible
 
 ## Visión general
-(appname) es una plataforma integral que combina reciclaje, educación ambiental, recompensas y acción comunitaria para fomentar un estilo de vida más sostenible.
+(EcoConnect) es una plataforma integral que combina reciclaje, educación ambiental, recompensas y acción comunitaria para fomentar un estilo de vida más sostenible.
 
 ## Características principales
 
-1. **Sistema de seguimiento de reciclaje**
-   - Los empleados pueden registrar los materiales reciclados por tipo y peso.
-   - Integración con básculas inteligentes para un pesaje preciso.
+1. **Sistema de seguimiento de reciclaje**   
+   - Los recicladores pueden registrar los materiales reciclables que tienen disponibles (plástico, papel, vidrio, etc.), junto con detalles como cantidad, peso, y disponibilidad.
+   - Los centros de acopio pueden listar qué materiales pueden aceptar en un momento dado.
+   - Las empresas recicladoras pueden ver la disponibilidad de materiales en diferentes centros de acopio.
 
 2. **Educación ambiental interactiva**
    - Guía detallada sobre qué materiales son reciclables y cómo reciclarlos correctamente.
 
 3. **Sistema de recompensas gamificado**
-   - Los usuarios ganan puntos (eco-points) por cada kilo de material reciclado.
-   - Niveles de "eco-héroe" con insignias y logros desbloqueables.
+   - Los usuarios ganan puntos (eco-points) por cada kilo de material reciclado.   
    - Recompensas tangibles (como ropa para niños en situación de pobreza) por alcanzar ciertos hitos.
-   - Bonos de incentivo para grandes contribuyentes (50+ kilos).
-   - Posibilidad de canjear eco-points por descuentos en tiendas locales o productos sostenibles.
+   - Bonos de incentivo para grandes contribuyentes (50+ kilos) y que sean recicladores-vulnerables.   
    - Tasas preferenciales dependiendo del tipo de rol del reciclador.
 
 4. **Mapa interactivo de puntos de reciclaje**
@@ -25,16 +24,14 @@
    - Información en tiempo real sobre la capacidad y tipos de materiales aceptados en cada punto.
    - Posibilidad de programar recogidas a domicilio para grandes cantidades.
 
-5. **Dashboard de impacto**
-   - Visualización del impacto individual y colectivo en términos de CO2 evitado, árboles salvados, etc.
+5. **Historial de transacciones y reportes**
+   - Guardar un historial de todas las entregas y recolecciones realizadas, junto con detalles como el tipo de material, la cantidad y las fechas.
+   - Generar reportes sobre las actividades de reciclaje para que las empresas y centros de acopio puedan monitorear la cantidad de material reciclado.
 
-6. **Análisis de datos y reportes**
-    - Generación de informes detallados sobre patrones de reciclaje para autoridades locales.
-
-7. **Usuarios del sistema**
-    - Recicladores vulnerables y no vulnerables (pequeña).
-    - Empleados de centro de acopio (mediana).
-    - Empresas recicladoras (grande).
+6. **Usuarios del sistema**
+   - Recicladores vulnerables y no vulnerables (pequeña).
+   - Empleados de centro de acopio (mediana).
+   - Empresas recicladoras (grande).
 
 ## Tecnologías propuestas
 

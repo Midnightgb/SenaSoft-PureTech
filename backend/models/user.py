@@ -4,10 +4,10 @@ from models.base_class import Base
 from enum import Enum as PyEnum
 
 class Rol(PyEnum):
-    Admin = "Administrador"
-    Employee = "Empleado"
-    vulnerable = "vulnerable"
-    non_vulnerable = "no_vulnerable"
+    Admin = 1
+    Employee = 2
+    vulnerable = 3
+    non_vulnerable = 4
 
 class User(Base):
     __tablename__ = "users"
@@ -16,7 +16,7 @@ class User(Base):
     name = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
-    rol = Column(Enum(Rol), nullable=False, default=Rol.no_vulnerable)
+    rol = Column(Enum(Rol), nullable=False, default=Rol.non_vulnerable)
     eco_points = Column(Integer, default=0)
     created_at = Column(TIMESTAMP, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)

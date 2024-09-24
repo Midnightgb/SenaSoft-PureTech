@@ -5,7 +5,7 @@ from enum import Enum as PyEnum
 
 class Rol(PyEnum):
     Admin = "Administrador"
-    Employee = "Employee"
+    Employee = "Empleado"
     vulnerable = "vulnerable"
     non_vulnerable = "no_vulnerable"
 

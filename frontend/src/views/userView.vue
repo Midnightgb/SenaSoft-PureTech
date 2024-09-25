@@ -1,5 +1,5 @@
 <template>
-    <div class="Users bg-green-50 min-h-screen p-8">
+    <div class="Users bg-green-50 min-h-screen w-screen p-8">
       <h1 class="text-3xl font-bold mb-6 text-green-800">User</h1>
       
       <!-- Search and filter bar -->

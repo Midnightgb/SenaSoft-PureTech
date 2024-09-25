@@ -1,11 +1,11 @@
 from pydantic import BaseModel, EmailStr
 from enum import Enum
 class Rol(Enum):
-    Admin = 1
-    Employee = 2
-    vulnerable = 3
-    non_vulnerable = 4
-
+    admin = "1"
+    employee = "2"
+    vulnerable = "3"
+    non_vulnerable = "4"
+    
 class UserBase(BaseModel):
     name: str
     email: EmailStr

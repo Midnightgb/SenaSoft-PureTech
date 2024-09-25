@@ -7,19 +7,19 @@ from models.point_transaction import PointTransaction
 from models.recycling import Recycling
 from models.user_achievement import UserAchievement
 
-class Rol(PyEnum):
-    Admin = 1
-    Employee = 2
-    vulnerable = 3
-    non_vulnerable = 4
+class Rol(str, PyEnum):
+    admin = "1"
+    employee = "2"
+    vulnerable = "3"
+    non_vulnerable = "4"
 
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
+    name = Column(String, index=True)
     type = Column(Enum(Rol), nullable=False, default=Rol.non_vulnerable)
     eco_points = Column(Integer, default=0)
     

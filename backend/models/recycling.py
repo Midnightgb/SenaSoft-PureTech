@@ -9,12 +9,12 @@ class Recycling(Base):
     __tablename__ = "recycling"
   
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('users.id'))
     material_id = Column(Integer, ForeignKey('material.id'))
     weight = Column(Float)
     date = Column(TIMESTAMP, default=datetime.now())
     earned_points = Column(Integer)
-    recycling_point_id = Column(Integer, ForeignKey('recycling_point.id'))    
+    recycling_point_id = Column(Integer, ForeignKey('recycling_points.id'))    
 
     user = relationship("User", back_populates="recycling")
     material = relationship("Material", back_populates="recycling")

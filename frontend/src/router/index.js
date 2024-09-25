@@ -50,6 +50,25 @@ const routes = [
   },
 
   {
+    path: "/EducationCenter",
+    name: "EducationCenter",
+    component: () => import("@/views/EducationCenterView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/RewardsCenter",
+    name: "RewardsCenter",
+    component: () => import("@/views/RewardsCenterView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+
+  {
     path: "/test",
     name: "Test",
     component: () => import("@/views/TestView.vue"),

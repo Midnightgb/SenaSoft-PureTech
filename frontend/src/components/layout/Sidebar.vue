@@ -31,7 +31,7 @@
       <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Education Center
     </button>
-    <button  @click="router.push('/EducationCenter')"
+    <button  @click="openRewardsCenter"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Rewards Center
@@ -90,6 +90,11 @@ const { isSidebarOpen, closeSidebar } = useSidebar();
 
 const openEducationCenter = () => {
   router.push("/EducationCenter");
+  closeSidebar();
+};
+
+const openRewardsCenter = () => {
+  router.push("/RewardsCenter");
   closeSidebar();
 };
 

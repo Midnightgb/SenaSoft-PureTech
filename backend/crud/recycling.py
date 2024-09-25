@@ -22,11 +22,8 @@ def create_recycling(db: Session, recycling: RecyclingCreate):
         raise ValueError("Recycling point not found")
     
     db_recycling = Recycling(user_id=recycling.user_id, material_id=recycling.material_id, weight=recycling.weight, earned_points=recycling.earned_points, recycling_point_id=recycling.recycling_point_id)
-    print("adding points to user")
-    print(f"User points: {user.eco_points}")
     user.eco_points += recycling.earned_points
-    print(f"User points after adding: {user.eco_points}")
-    #update user points
+
     db.add(user)
     db.add(db_recycling)
     try:

@@ -30,6 +30,16 @@ const routes = [
       requiresAuth: false,
     },
   },
+
+  {
+    path: "/users",
+    name: "Users",
+    component: () => import("@/views/userView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",

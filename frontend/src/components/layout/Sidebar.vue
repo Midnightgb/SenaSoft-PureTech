@@ -20,16 +20,12 @@
             <HomeIcon class="mr-3 h-6 w-6 text-gray-500" />
             Start
           </a>
-          <a href="#"
+          <button @click="router.push('/users')"
             class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             <UsersIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Users
-          </a>
-          <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <RecycleIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Log Recycling
-    </a>
+          </button>
+       
     <a href="#"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />

@@ -11,8 +11,8 @@
             <UserIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               v-model="username"
+              placeholder="Correo Electrónico"
               type="text"
-              placeholder="Nombre de usuario"
               class="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               required
             />
@@ -66,8 +66,8 @@ import { login } from '@/services/api'
 import { LayoutIcon, UserIcon, LockIcon, EyeIcon, EyeOffIcon, LogInIcon, UserPlusIcon } from 'lucide-vue-next'
 
 const router = useRouter()
-const username = ref('')
-const password = ref('')
+const username = ref('user@example.com')
+const password = ref('string')
 const showPassword = ref(false)
 const error = ref('')
 
@@ -77,6 +77,8 @@ const togglePasswordVisibility = () => {
 
 const handleLogin = async () => {
   error.value = ''
+  console.log('Login:', username.value, password.value);
+  
   const credentials = {
     username: username.value,
     password: password.value,

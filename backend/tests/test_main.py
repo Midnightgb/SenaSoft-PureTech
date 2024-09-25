@@ -111,7 +111,7 @@ def test_login_wrong_password():
 
 def test_register_material():
     response = client.post(
-        "/materials/register",
+        "/material/register",
         json={"name": "Plastic", "points_per_kg": 10}
     )
     assert response.status_code == 200
@@ -123,25 +123,25 @@ def test_register_material():
 def test_get_material():
     # Primero registramos un material
     material = client.post(
-        "/materials/register",
+        "/material/register",
         json={"name": "Glass", "points_per_kg": 15}
     ).json()
     
     # Ahora intentamos obtener el material
-    response = client.get(f"/materials/{material['id']}")
+    response = client.get(f"/material/{material['id']}")
     assert response.status_code == 200
     data = response.json()
     assert data["name"] == "Glass"
     assert data["points_per_kg"] == 15
 
 def test_get_material_list():
-    response = client.get("/materials/")
+    response = client.get("/material/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
 def test_register_recycling_point():
     response = client.post(
-        "/recycling_points/register",
+        "/recycling_point/register",
         json={
             "name": "Central Recycling",
             "latitude": 40.7128,
@@ -158,7 +158,7 @@ def test_register_recycling_point():
 def test_get_recycling_point():
     # Primero registramos un punto de reciclaje
     point = client.post(
-        "/recycling_points/register",
+        "/recycling_point/register",
         json={
             "name": "Downtown Recycling",
             "latitude": 34.0522,
@@ -169,13 +169,13 @@ def test_get_recycling_point():
     ).json()
     
     # Ahora intentamos obtener el punto de reciclaje
-    response = client.get(f"/recycling_points/{point['id']}")
+    response = client.get(f"/recycling_point/{point['id']}")
     assert response.status_code == 200
     data = response.json()
     assert data["name"] == "Downtown Recycling"
 
 def test_get_recycling_point_list():
-    response = client.get("/recycling_points/")
+    response = client.get("/recycling_point/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
@@ -187,12 +187,12 @@ def test_register_recycling():
     ).json()
     
     material = client.post(
-        "/materials/register",
+        "/material/register",
         json={"name": "Paper", "points_per_kg": 5}
     ).json()
     
     point = client.post(
-        "/recycling_points/register",
+        "/recycling_point/register",
         json={
             "name": "Local Recycling",
             "latitude": 51.5074,

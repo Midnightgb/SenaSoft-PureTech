@@ -23,6 +23,14 @@ const routes = [
     },
   },
   {
+    path: "/categorias",
+    name: "Categories",
+    component: () => import("@/views/CategoriesView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     redirect: (to) => ({ name: "Login", query: { redirect: to.fullPath } }),

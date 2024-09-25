@@ -4,7 +4,7 @@ from models.user import User
 from schemas.user import UserCreate
 from core.security import get_password_hash
 
-def get_user(db: Session, id: int):
+def get_user_by_id(db: Session, id: int):
     return db.query(User).filter(User.id == id).first()
 
 def get_user_by_email(db: Session, email: str):

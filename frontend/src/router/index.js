@@ -75,11 +75,20 @@ const routes = [
       requiresAuth: false,
     },
   },
-
+  
   {
     path: "/YourImpact",
     name: "YourImpact",
     component: () => import("@/views/YourImpactView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/userView",
+    name: "userView",
+    component: () => import("@/views/userView.vue"),
     meta: {
       requiresAuth: false,
     },

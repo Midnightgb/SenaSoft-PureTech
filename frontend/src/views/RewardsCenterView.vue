@@ -12,49 +12,49 @@
         <ul class="space-y-4">
           <li class="bg-white rounded-lg p-4 shadow flex items-center justify-between">
             <div class="flex items-center">
-              <GiftIcon class="h-8 w-8 text-purple-500 mr-3" />
+              <GiftIcon class="h-8 w-8 text-green-500 mr-3" />
               <div class="mb-4">
                 <h3 class="font-semibold">$5 Gift Card</h3>
-                <p class="text-sm text-gray-500">Local Eco-Store</p>
+                <p class="text-sm text-gray-500">Local Eco-Store</p>  
               </div>
             </div>
-            <button class="bg-purple-500 text-white px-3 py-1 rounded-md text-sm">
+            <button class="bg-green-500 text-white px-3 py-1 rounded-md text-sm">
               500 pts
             </button>
         </li>
         <li class="bg-white rounded-lg p-4 shadow flex items-center justify-between">
           <div class="flex items-center">
-            <GiftIcon class="h-8 w-8 text-purple-500 mr-3 " />
+            <GiftIcon class="h-8 w-8 text-green-500 mr-3 " />
             <div class="h-50%">
               <h3 class="font-semibold">Reusable Water Bottle</h3>
               <p class="text-sm text-gray-500">EcoConnect Branded</p>
             </div>
           </div>
-          <button class="bg-purple-500 text-white px-3 py-1 rounded-md text-sm">
+          <button class="bg-green-500 text-white px-3 py-1 rounded-md text-sm">
             750 pts
           </button>
         </li>
         <li class="bg-white rounded-lg p-4 shadow flex items-center justify-between">
           <div class="flex items-center">
-            <GiftIcon class="h-8 w-8 text-purple-500 mr-3 " />
+            <GiftIcon class="h-8 w-8 text-green-500 mr-3 " />
             <div class="h-50%">
               <h3 class="font-semibold">Reusable Water Bottle</h3>
               <p class="text-sm text-gray-500">EcoConnect Branded</p>
             </div>
           </div>
-          <button class="bg-purple-500 text-white px-3 py-1 rounded-md text-sm">
+          <button class="bg-green-500 text-white px-3 py-1 rounded-md text-sm">
             750 pts
           </button>
         </li>
         <li class="bg-white rounded-lg p-4 shadow flex items-center justify-between">
           <div class="flex items-center">
-            <GiftIcon class="h-8 w-8 text-purple-500 mr-3 " />
+            <GiftIcon class="h-8 w-8 text-green-500 mr-3 " />
             <div class="h-50%">
               <h3 class="font-semibold">Reusable Water Bottle</h3>
               <p class="text-sm text-gray-500">EcoConnect Branded</p>
             </div>
           </div>
-          <button class="bg-purple-500 text-white px-3 py-1 rounded-md text-sm">
+          <button class="bg-green-500 text-white px-3 py-1 rounded-md text-sm">
             750 pts
           </button>
         </li>

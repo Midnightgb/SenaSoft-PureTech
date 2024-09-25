@@ -17,15 +17,7 @@
             <span>{{ material }}</span>
             <ChevronRightIcon class="h-5 w-5 text-green-400" />
           </li>
-        </ul>
-        <div class="mt-4 bg-white rounded-lg p-4 shadow border border-green-200">
-          <h2 class="text-lg font-semibold mb-2 text-green-800">Recycling Quiz</h2>
-          <p class="text-sm mb-2 text-green-600">Test your knowledge and earn points!</p>
-          <button class="w-full bg-green-500 hover:bg-green-600 text-white p-2 rounded-md font-medium flex items-center justify-center transition duration-300">
-            <BookOpenIcon class="h-5 w-5 mr-2" />
-            Start Quiz
-          </button>
-        </div>
+        </ul>         
       </main>
     </div>
   </template>

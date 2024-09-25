@@ -77,15 +77,13 @@ const routes = [
   },
 
   {
-    path: "/YourImpact",
-    name: "YourImpact",
-    component: () => import("@/views/YourImpactView.vue"),
+    path: "/SaveRecycling",
+    name: "SaveRecycling",
+    component: () => import("@/views/SaveRecycling.vue"),
     meta: {
       requiresAuth: false,
     },
   },
-
-
   {
     path: "/test",
     name: "Test",

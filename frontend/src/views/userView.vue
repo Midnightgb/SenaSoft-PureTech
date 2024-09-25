@@ -113,17 +113,7 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
-  import { UsersIcon } from '@heroicons/vue/24/outline'
+  import { ref } from 'vue'  
   
-  // Simulated user data
-  const users = ref([
-    { id: 1, name: 'John Doe', email: 'john@example.com', active: true, avatar: 'https://i.pravatar.cc/150?img=1' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', active: false, avatar: 'https://i.pravatar.cc/150?img=2' },
-    // Add more users as needed
-  ])
-  </script>
+ 
   
-  <style scoped>
-  /* Add any component-specific styles here */
-  </style>

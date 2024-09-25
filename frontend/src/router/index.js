@@ -76,6 +76,15 @@ const routes = [
     },
   },
 
+  {
+    path: "/YourImpact",
+    name: "YourImpact",
+    component: () => import("@/views/YourImpactView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
 
   {
     path: "/test",

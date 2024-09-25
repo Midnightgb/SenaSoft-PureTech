@@ -41,16 +41,11 @@
       <MapPinIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Recycling Points Map
     </button>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <TrophyIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Available Rewards
-    </a>
-    <a href="#"
+    <button @click="openYourImpact"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <ChartBarIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Your Impact
-    </a>
+    </button>
         </nav>
       </div>
       <div class="flex-shrink-0 flex border-t border-gray-200 dark:border-gray-700 p-4">
@@ -100,6 +95,11 @@ const openRewardsCenter = () => {
 
 const openRecyclingMap = () => {
   router.push("/RecyclingMap");
+  closeSidebar();
+};
+
+const openYourImpact = () => {
+  router.push("/YourImpact");
   closeSidebar();
 };
 

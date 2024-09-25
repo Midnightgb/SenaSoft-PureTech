@@ -5,6 +5,8 @@ from models.base_class import Base
 from enum import Enum as PyEnum
 from models.redeem_history import RedeemHistory
 from models.point_transaction import PointTransaction
+from models.recycling import Recycling
+from models.user_achievements import UserAchievement
 
 class Rol(PyEnum):
     Admin = 1
@@ -26,6 +28,5 @@ class User(Base):
     
     redeem_history = relationship("RedeemHistory", back_populates="user")
     point_transactions = relationship("PointTransaction", back_populates="user")
-    
-    
-    
+    recycling = relationship("Recycling", back_populates="user")
+    user_achievements = relationship("UserAchievement", back_populates="user")

@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, TIMESTAMP, DateTime, String
+from sqlalchemy.orm import relationship
 from datetime import datetime
 from models.base_class import Base
 
@@ -11,3 +12,5 @@ class Achievement(Base):
     required_points = Column(Integer, default=0)
     created_at = Column(TIMESTAMP, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    
+    user_achievements = relationship("UserAchievement", back_populates="achievement")

@@ -5,7 +5,7 @@ from enum import Enum as PyEnum
 from models.redeem_history import RedeemHistory
 from models.point_transaction import PointTransaction
 from models.recycling import Recycling
-from backend.models.user_achievement import UserAchievement
+from models.user_achievement import UserAchievement
 
 class Rol(PyEnum):
     Admin = 1

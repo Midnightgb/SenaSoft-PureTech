@@ -1,23 +1,25 @@
 from pydantic import BaseModel, EmailStr
+from enum import Enum
+class Rol(Enum):
+    Admin = 1
+    Employee = 2
+    vulnerable = 3
+    non_vulnerable = 4
 
-class UserCreate(BaseModel):
-    username: str
+class UserBase(BaseModel):
+    name: str
     email: EmailStr
+    type: Rol
+    eco_points: int = 0
+
+class UserCreate(UserBase):
     password: str
 
-class UserInDB(BaseModel):
+class User(UserBase):
     id: int
-    username: str
-    email: EmailStr
-    hashed_password: str
-
-class User(BaseModel):
-    id: int
-    username: str
-    email: EmailStr
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 class Token(BaseModel):
     access_token: str

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, TIMESTAMP, DateTime, String
+from sqlalchemy import Column, Integer, DateTime, String
 from datetime import datetime
 from models.base_class import Base
 
@@ -9,5 +9,3 @@ class Report(Base):
   start_date = Column(DateTime, default=datetime.now())
   end_date = Column(DateTime, default=datetime.now())
   data = Column(String)
-  created_at = Column(TIMESTAMP, default=datetime.now())
-  updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)

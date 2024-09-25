@@ -1,6 +1,5 @@
-from sqlalchemy import Column, Integer, DateTime, TIMESTAMP, Float, String
+from sqlalchemy import Column, Integer, Float, String
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from models.base_class import Base
 
 class RecyclingPoint(Base):
@@ -12,8 +11,6 @@ class RecyclingPoint(Base):
   longitude = Column(Float)
   current_capacity = Column(Integer)
   max_capacity = Column(Integer)
-  created_at = Column(TIMESTAMP, default=datetime.now)
-  updated_at = Column(DateTime, default=datetime.now)
-  
+
   recycling = relationship("Recycling", back_populates="recycling_point") 
   

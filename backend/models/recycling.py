@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, DateTime, TIMESTAMP, ForeignKey, Float
+from sqlalchemy import Column, Integer, ForeignKey, Float, TIMESTAMP
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from models.base_class import Base
@@ -12,10 +12,9 @@ class Recycling(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     material_id = Column(Integer, ForeignKey('material.id'))
     weight = Column(Float)
+    date = Column(TIMESTAMP, default=datetime.now())
     earned_points = Column(Integer)
     recycling_point_id = Column(Integer, ForeignKey('recycling_point.id'))    
-    created_at = Column(TIMESTAMP, default=datetime.now)
-    updated_at = Column(DateTime, default=datetime.now)
 
     user = relationship("User", back_populates="recycling")
     material = relationship("Material", back_populates="recycling")

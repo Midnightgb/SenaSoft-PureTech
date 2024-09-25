@@ -14,8 +14,7 @@ class PointTransaction(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     points = Column(Integer)
-    typeTransaction = Column(Enum(TransactionType), nullable=False)
-    created_at = Column(TIMESTAMP, default=datetime.now())
-    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    type = Column(Enum(TransactionType), nullable=False)
+    date = Column(TIMESTAMP, default=datetime.now())
 
     user = relationship("User", back_populates="point_transactions")

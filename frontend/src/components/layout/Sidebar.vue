@@ -36,11 +36,11 @@
       <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Rewards Center
     </button>
-    <a href="#"
+    <button @click="openRecyclingMap"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <MapPinIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Recycling Points Map
-    </a>
+    </button>
     <a href="#"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <TrophyIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
@@ -95,6 +95,11 @@ const openEducationCenter = () => {
 
 const openRewardsCenter = () => {
   router.push("/RewardsCenter");
+  closeSidebar();
+};
+
+const openRecyclingMap = () => {
+  router.push("/RecyclingMap");
   closeSidebar();
 };
 

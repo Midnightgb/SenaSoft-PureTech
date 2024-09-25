@@ -1,7 +1,6 @@
 <template>
     <div class="flex flex-col h-screen w-screen bg-green-50">
       <header class="p-4 bg-green-500 text-white flex items-center">
-        <ArrowLeftIcon class="h-6 w-6 mr-2" />
         <h1 class="text-xl font-bold">Rewards Center</h1>
       </header>
       <main class="flex-1 overflow-auto p-4">

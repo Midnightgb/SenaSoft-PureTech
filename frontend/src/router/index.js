@@ -67,6 +67,15 @@ const routes = [
     },
   },
 
+  {
+    path: "/RecyclingMap",
+    name: "RecyclingMap",
+    component: () => import("@/views/RecyclingMapView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
 
   {
     path: "/test",

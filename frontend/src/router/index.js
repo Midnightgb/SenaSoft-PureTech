@@ -41,6 +41,11 @@ const routes = [
   },
 
   {
+    path: "/test",
+    name: "Test",
+    component: () => import("@/views/TestView.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     redirect: (to) => ({ name: "Login", query: { redirect: to.fullPath } }),

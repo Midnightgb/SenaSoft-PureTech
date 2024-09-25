@@ -26,11 +26,11 @@
             Users
           </button>
        
-    <a href="#"
+    <button @click="openTestView"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
       Education Center
-    </a>
+    </button>
     <a href="#"
       class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
       <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
@@ -87,6 +87,12 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const { isSidebarOpen, closeSidebar } = useSidebar();
+
+const openTestView = () => {
+  router.push("/test");
+  closeSidebar();
+};
+
 const handleLogout = async () => {
   const result = await logout();
   console.log(result);

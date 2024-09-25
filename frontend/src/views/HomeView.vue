@@ -16,7 +16,7 @@
 import Sidebar from "@/components/layout/Sidebar.vue";
 import Navbar from "@/components/layout/Navbar.vue";
 import MainContent from "@/components/layout/MainContent.vue";
-
+X
 </script>
 
 <style scoped>

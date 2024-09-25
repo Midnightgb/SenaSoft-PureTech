@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.auth import router as auth_router
 from api.health import router as health_router
 from api.recycling import router as recycling_router
+from api.recycling_point import router as recycling_point_router
+from api.material import router as material_router
 from config import settings
 
 app = FastAPI(
@@ -24,7 +26,8 @@ app.add_middleware(
 app.include_router(health_router, prefix="/health", tags=["health"])
 app.include_router(auth_router, prefix="/auth", tags=["auth"])
 app.include_router(recycling_router, prefix="/recycling", tags=["recycling"])
-
+app.include_router(recycling_point_router, prefix="/recycling_point", tags=["recycling_point"])
+app.include_router(material_router, prefix="/material", tags=["material"])
 
 @app.get("/")
 async def root():

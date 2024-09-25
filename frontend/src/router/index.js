@@ -1,6 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
-
+//deploy
 const routes = [
   {
     path: "/",

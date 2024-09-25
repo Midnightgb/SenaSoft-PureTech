@@ -1,5 +1,4 @@
-
-<template>  
+<template>
   <transition enter-active-class="transition-opacity ease-linear duration-300" enter-from-class="opacity-0"
     enter-to-class="opacity-100" leave-active-class="transition-opacity ease-linear duration-300"
     leave-from-class="opacity-100" leave-to-class="opacity-0">
@@ -20,41 +19,37 @@
             <HomeIcon class="mr-3 h-6 w-6 text-gray-500" />
             Start
           </a>
-          <a href="#"
+          <button @click="router.push('/users')"
             class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
             <UsersIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Users
-          </a>
-          <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <RecycleIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Log Recycling
-    </a>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Education Center
-    </a>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Rewards Center
-    </a>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <MapPinIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Recycling Points Map
-    </a>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <TrophyIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Available Rewards
-    </a>
-    <a href="#"
-      class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
-      <ChartBarIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-      Your Impact
-    </a>
+          </button>
+
+          <button @click="openEducationCenter"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+            <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+            Education Center
+          </button>
+          <button @click="openRewardsCenter"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+            <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+            Rewards Center
+          </button>
+          <button @click="openRecyclingMap"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+            <MapPinIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+            Recycling Points Map
+          </button>
+          <button @click="openYourImpact"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+            <ChartBarIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+            Your Impact
+          </button>
+          <button @click="openYourRecycling"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+            <ArchiveBoxIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+            Register Recycling
+          </button>
         </nav>
       </div>
       <div class="flex-shrink-0 flex border-t border-gray-200 dark:border-gray-700 p-4">
@@ -81,7 +76,7 @@ import {
   AcademicCapIcon,
   GiftIcon,
   MapPinIcon,
-  TrophyIcon,
+  ArchiveBoxIcon,
   ChartBarIcon,
 } from "@heroicons/vue/24/outline";
 import { useSidebar } from "@/composables/useSidebar";
@@ -91,6 +86,26 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const { isSidebarOpen, closeSidebar } = useSidebar();
+
+const openEducationCenter = () => {
+  router.push("/EducationCenter");
+  closeSidebar();
+};
+
+const openRewardsCenter = () => {
+  router.push("/RewardsCenter");
+  closeSidebar();
+};
+
+const openYourImpact = () => {
+  router.push("/YourImpact");
+  closeSidebar();
+};
+
+const openYourRecycling = () => {
+  router.push("/SaveRecycling")
+}
+
 const handleLogout = async () => {
   const result = await logout();
   console.log(result);

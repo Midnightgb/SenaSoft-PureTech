@@ -1,6 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
-
+//deploy
 const routes = [
   {
     path: "/",
@@ -29,6 +29,76 @@ const routes = [
     meta: {
       requiresAuth: false,
     },
+  },
+
+  {
+    path: "/users",
+    name: "Users",
+    component: () => import("@/views/userView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/EducationCenter",
+    name: "EducationCenter",
+    component: () => import("@/views/EducationCenterView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/EducationCenter",
+    name: "EducationCenter",
+    component: () => import("@/views/EducationCenterView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/RewardsCenter",
+    name: "RewardsCenter",
+    component: () => import("@/views/RewardsCenterView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/RecyclingMap",
+    name: "RecyclingMap",
+    component: () => import("@/views/RecyclingMapView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  
+  {
+    path: "/SaveRecycling",
+    name: "SaveRecycling",
+    component: () => import("@/views/SaveRecycling.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+  {
+    path: "/userView",
+    name: "userView",
+    component: () => import("@/views/userView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+
+  {
+    path: "/test",
+    name: "Test",
+    component: () => import("@/views/TestView.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

@@ -13,4 +13,4 @@ class UserAchievement(UserAchievementBase):
     date_obtained: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True

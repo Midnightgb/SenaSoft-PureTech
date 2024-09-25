@@ -11,4 +11,4 @@ class Material(MaterialBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True

@@ -97,11 +97,6 @@ const openRewardsCenter = () => {
   closeSidebar();
 };
 
-const openRecyclingMap = () => {
-  router.push("/RecyclingMap");
-  closeSidebar();
-};
-
 const openYourImpact = () => {
   router.push("/YourImpact");
   closeSidebar();

@@ -75,7 +75,7 @@ const routes = [
       requiresAuth: false,
     },
   },
-
+  
   {
     path: "/SaveRecycling",
     name: "SaveRecycling",
@@ -84,6 +84,17 @@ const routes = [
       requiresAuth: false,
     },
   },
+
+  {
+    path: "/userView",
+    name: "userView",
+    component: () => import("@/views/userView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+
+
   {
     path: "/test",
     name: "Test",

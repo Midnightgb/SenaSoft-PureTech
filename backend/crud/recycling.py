@@ -3,15 +3,35 @@ from sqlalchemy.exc import IntegrityError
 from datetime import datetime
 from models.recycling import Recycling
 from schemas.recycling import RecyclingCreate
+from crud.user import get_user_by_id
+from crud.material import get_material_by_id
+from crud.recycling_point import get_recycling_point_by_id
 
 def get_recycling_by_id(db: Session, id: int):
     return db.query(Recycling).filter(Recycling.id == id).first()
-  
+
 def create_recycling(db: Session, recycling: RecyclingCreate):
+    user = get_user_by_id(db, recycling.user_id)
+    if user is None:
+        raise ValueError("User not found")
+    material = get_material_by_id(db, recycling.material_id)
+    if material is None:
+        raise ValueError("Material not found")
+    recycling_point = get_recycling_point_by_id(db, recycling.recycling_point_id)
+    if recycling_point is None:
+        raise ValueError("Recycling point not found")
+    
     db_recycling = Recycling(user_id=recycling.user_id, material_id=recycling.material_id, weight=recycling.weight, earned_points=recycling.earned_points, recycling_point_id=recycling.recycling_point_id)
+    print("adding points to user")
+    print(f"User points: {user.eco_points}")
+    user.eco_points += recycling.earned_points
+    print(f"User points after adding: {user.eco_points}")
+    #update user points
+    db.add(user)
     db.add(db_recycling)
     try:
         db.commit()
+        db.refresh(user)
         db.refresh(db_recycling)
     except IntegrityError as e:
         db.rollback()

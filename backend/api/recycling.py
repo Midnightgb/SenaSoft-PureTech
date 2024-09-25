@@ -22,6 +22,6 @@ def get_recycling(id: int, db: Session = Depends(get_db)):
     return db_recycling
   
 @router.get("/", response_model=list[Recycling])
-def get_recycling_list(skip: int = 0, limit: int = 10, user_id: int = None, material_id: int = None, recycling_point_id: int = None, since_date:datetime = None, until_date:datetime = None, db: Session = Depends(get_db)):
+def get_recycling_list_db(skip: int = 0, limit: int = 10, user_id: int = None, material_id: int = None, recycling_point_id: int = None, since_date:datetime = None, until_date:datetime = None, db: Session = Depends(get_db)):
     return get_recycling_list(db, skip=skip, limit=limit, user_id=user_id, material_id=material_id, recycling_point_id=recycling_point_id, since_date=since_date, until_date=until_date)
   

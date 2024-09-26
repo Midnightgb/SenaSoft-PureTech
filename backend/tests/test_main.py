@@ -15,7 +15,7 @@ from sqlalchemy.pool import StaticPool
 from main import app
 from db.session import get_db
 from models.user import Base
-from config import settings
+from backend.core.config import settings
 
 # Crear una base de datos en memoria para las pruebas
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"

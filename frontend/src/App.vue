@@ -24,7 +24,6 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 import Sidebar from "@/components/layout/Sidebar.vue";
 import Navbar from "@/components/layout/Navbar.vue";
-import MainContent from "@/components/layout/MainContent.vue";
 
 const route = useRoute();
 const showNavigation = computed(() => route.name !== "Login");

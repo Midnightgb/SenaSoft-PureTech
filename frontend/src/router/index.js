@@ -49,14 +49,6 @@ const routes = [
     },
   },
 
-  {
-    path: "/EducationCenter",
-    name: "EducationCenter",
-    component: () => import("@/views/EducationCenterView.vue"),
-    meta: {
-      requiresAuth: false,
-    },
-  },
 
   {
     path: "/RewardsCenter",
@@ -86,9 +78,9 @@ const routes = [
   },
 
   {
-    path: "/userView",
-    name: "userView",
-    component: () => import("@/views/userView.vue"),
+    path: "/Profile",
+    name: "Profile",
+    component: () => import("@/views/ProfileView.vue"),
     meta: {
       requiresAuth: false,
     },

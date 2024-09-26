@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from config import settings
+from core.config import settings
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.sql import text
 from core.utils.logger import Logger

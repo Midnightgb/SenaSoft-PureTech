@@ -47,7 +47,7 @@
         </div>
       </form>
       <div v-if="error" class="text-red-500 text-center mt-2">{{ error }}</div>
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between hidden">
         <a href="/forgot-password" class="text-sm text-purple-600 hover:underline">
           ¿Olvidaste tu contraseña?
         </a>

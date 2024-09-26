@@ -124,4 +124,5 @@ const handleLogout = async () => {
     console.error(result.error)
   }
 };
+
 </script>

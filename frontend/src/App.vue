@@ -26,7 +26,7 @@ import Sidebar from "@/components/layout/Sidebar.vue";
 import Navbar from "@/components/layout/Navbar.vue";
 
 const route = useRoute();
-const showNavigation = computed(() => route.name !== "Login");
+const showNavigation = computed(() => route.name !== "Login"  || route.name !== "Landing");
 </script>
 
 <style scoped>

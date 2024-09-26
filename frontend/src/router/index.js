@@ -88,9 +88,9 @@ const routes = [
 
 
   {
-    path: "/test",
-    name: "Test",
-    component: () => import("@/views/TestView.vue"),
+    path: "/landing",
+    name: "Landing",
+    component: () => import("@/views/LandingView.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

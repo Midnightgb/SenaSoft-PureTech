@@ -56,6 +56,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const isUserMenuOpen = ref(false);
 
@@ -65,6 +68,6 @@ const toggleUserMenu = () => {
 
 const openProfile = () => {
   router.push("/Profile");
-  closeSidebar();
+  
 };
 </script>

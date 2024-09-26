@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "/inicio-sesion",
+    redirect: "/landing",
   },
   {
     path: "/inicio-sesion",
@@ -23,9 +23,73 @@ const routes = [
     },
   },
   {
+    path: "/categorias",
+    name: "Categories",
+    component: () => import("@/views/CategoriesView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/users",
+    name: "Users",
+    component: () => import("@/views/userView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/EducationCenter",
+    name: "EducationCenter",
+    component: () => import("@/views/EducationCenterView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/RewardsCenter",
+    name: "RewardsCenter",
+    component: () => import("@/views/RewardsCenterView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/RecyclingMap",
+    name: "RecyclingMap",
+    component: () => import("@/views/RecyclingMapView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/SaveRecycling",
+    name: "SaveRecycling",
+    component: () => import("@/views/SaveRecycling.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/Profile",
+    name: "Profile",
+    component: () => import("@/views/ProfileView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/landing",
+    name: "Landing",
+    component: () => import("@/views/LandingView.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    redirect: (to) => ({ name: "Login", query: { redirect: to.fullPath } }),
+    redirect: (to) => ({ name: "Landing", query: { redirect: to.fullPath } }),
   },
 ];
 
@@ -44,8 +108,8 @@ router.beforeEach((to, from, next) => {
   } else if (to.matched.some((record) => record.meta.requiresAuth)) {
     // Verificar si la ruta requiere autenticación
     if (!isAuthenticated) {
-      // Si no está autenticado, redirigir al login
-      next({ name: "Login" });
+      // Si no está autenticado, redirigir al landing
+      next({ name: "Landing" });
     } else {
       // Si está autenticado, permitir la navegación
       next();
@@ -55,4 +119,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
 export default router;

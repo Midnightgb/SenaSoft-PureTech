@@ -15,17 +15,10 @@
           </button>
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <img class="h-8 w-auto" src="/logo.svg" alt="Logo de la empresa" />
+            <img class="h-8 w-auto" src="/img/connect.png" alt="Logo de la empresa" />
           </div>
         </div>
-
-        <!-- Barra de búsqueda -->
-        <div
-          class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end"
-        >
-          <SearchBar />
-        </div>
-
+        
         <!-- Iconos de la derecha -->
         <div class="flex items-center">
           <!-- Notificaciones -->

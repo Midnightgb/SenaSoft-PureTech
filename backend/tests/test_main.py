@@ -11,8 +11,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from main import app
 from db.session import get_db
-from models.user import Base
-from backend.core.config import settings
+from models.base_class import Base
+from models.user import User, Rol
+from models.material import Material
+from models.recycling_point import RecyclingPoint
+from models.recycling import Recycling
+from core.security import create_access_token
 
 # Crear una base de datos en memoria para las pruebas
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
@@ -40,7 +44,8 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    
+    assert response.json() == {"message": "Welcome to the API"}
+
 def test_health_check():
     response = client.get("/health/health_check")
     assert response.status_code == 200
@@ -198,43 +203,63 @@ def test_register_recycling():
         }
     ).json()
     
+    # Creamos un token de acceso para el usuario
+    access_token = create_access_token(data={"sub": user["email"]})
+    headers = {"Authorization": f"Bearer {access_token}"}
+    
     response = client.post(
         "/recycling/register",
         json={
             "user_id": user["id"],
             "material_id": material["id"],
             "weight": 10.5,
-            "recycling_point_id": point["id"],
-            "earned_points": 52
-        }
+            "recycling_point_id": point["id"]
+        },
+        headers=headers
     )
     assert response.status_code == 200
     data = response.json()
     assert data["weight"] == 10.5
-    assert data["earned_points"] == 52
+    assert "earned_points" in data
     assert "id" in data
 
 def test_get_recycling():
     # Primero registramos un reciclaje (usando el mismo proceso que en test_register_recycling)
+    user = client.post(
+        "/auth/register",
+        json={"name": "recycler2", "email": "recycler2@example.com", "password": "password", "type": Rol.vulnerable.value}
+    ).json()
+    
+    access_token = create_access_token(data={"sub": user["email"]})
+    headers = {"Authorization": f"Bearer {access_token}"}
+    
     recycling = client.post(
         "/recycling/register",
         json={
-            "user_id": 1,
+            "user_id": user["id"],
             "material_id": 1,
             "weight": 10.5,
-            "recycling_point_id": 1,
-            "earned_points": 52
-        }
+            "recycling_point_id": 1
+        },
+        headers=headers
     ).json()
     
     # Ahora intentamos obtener el reciclaje
-    response = client.get(f"/recycling/{recycling['id']}")
+    response = client.get(f"/recycling/{recycling['id']}", headers=headers)
     assert response.status_code == 200
     data = response.json()
     assert data["weight"] == 10.5
-    assert data["earned_points"] == 52
+    assert "earned_points" in data
 
 def test_get_recycling_list():
-    response = client.get("/recycling/")
+    user = client.post(
+        "/auth/register",
+        json={"name": "recycler3", "email": "recycler3@example.com", "password": "password", "type": Rol.vulnerable.value}
+    ).json()
+    
+    access_token = create_access_token(data={"sub": user["email"]})
+    headers = {"Authorization": f"Bearer {access_token}"}
+    
+    response = client.get("/recycling/", headers=headers)
     assert response.status_code == 200
     assert isinstance(response.json(), list)

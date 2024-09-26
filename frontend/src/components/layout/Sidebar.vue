@@ -14,42 +14,42 @@
       <div class="flex-1 flex flex-col pt-5 pb-4">
         <nav class="mt-5 flex-1 px-2 space-y-1">
           <!-- Ítems del menú -->
-          <a href="#"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900">
+          <a @click="router.push('/')"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900 cursor-poi cursor-pointernter">
             <HomeIcon class="mr-3 h-6 w-6 text-gray-500" />
             Start
           </a>
-          <button @click="router.push('/users')"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <a @click="router.push('/users')"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <UsersIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Users
-          </button>
+          </a>
 
-          <button @click="openEducationCenter"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <a @click="openEducationCenter"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <AcademicCapIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Education Center
-          </button>
-          <button @click="openRewardsCenter"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          </a>
+          <a @click="openRewardsCenter"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <GiftIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Rewards Center
-          </button>
-          <button @click="openRecyclingMap"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          </a>
+          <a @click="openRecyclingMap"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <MapPinIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Recycling Points Map
-          </button>
-          <button @click="openYourImpact"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          </a>
+          <a @click="openYourImpact"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <ChartBarIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Your Impact
-          </button>
-          <button @click="openYourRecycling"
-            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          </a>
+          <a @click="openYourRecycling"
+            class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
             <ArchiveBoxIcon class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500" />
             Register Recycling
-          </button>
+          </a>
         </nav>
       </div>
       <div class="flex-shrink-0 flex border-t border-gray-200 dark:border-gray-700 p-4">

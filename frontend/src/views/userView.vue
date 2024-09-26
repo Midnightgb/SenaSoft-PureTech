@@ -230,8 +230,8 @@
                   v-model="userForm.type"
                   class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-700 dark:text-white"
                 >
-                  <option value="1">Admin</option>
-                  <option value="2">Employee</option>
+<!--                   <option value="1">Admin</option>
+                  <option value="2">Employee</option> -->
                   <option value="3" selected>Vulnerable</option>
                   <option value="4">Non-Vulnerable</option>
                 </select>

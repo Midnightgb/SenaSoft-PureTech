@@ -12,5 +12,7 @@ export const API_ENDPOINTS = {
   USERS: `${BASE_AUTH}/users`,
   REGISTER: `${BASE_AUTH}/register`,
   RECYCLING_MAP: `${BASE_URL}/recycling-map`,
+  REGISTER_RECYCLING: `${BASE_URL}/recycling/register`,
+  MATERIALS: `${BASE_URL}/material`,
 
 };

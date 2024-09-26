@@ -89,7 +89,7 @@ const navItems = [
   { name: 'Education Center', path: '/EducationCenter', icon: AcademicCapIcon },
   { name: 'Rewards Center', path: '/RewardsCenter', icon: GiftIcon },
   { name: 'Recycling Points Map', path: '/RecyclingMap', icon: MapPinIcon },
-  { name: 'Your Impact', path: '/YourImpact', icon: ChartBarIcon },
+  { name: 'Your Impact', path: '/inicio', icon: ChartBarIcon },
   { name: 'Register Recycling', path: '/SaveRecycling', icon: ArchiveBoxIcon },
 ];
 

@@ -106,6 +106,11 @@ const openYourRecycling = () => {
   router.push("/SaveRecycling")
 }
 
+const openRecyclingMap = () => {
+  router.push("/RecyclingMap");
+  closeSidebar();
+};
+
 const handleLogout = async () => {
   const result = await logout();
   console.log(result);

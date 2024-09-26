@@ -6,4 +6,6 @@ export const API_ENDPOINTS = {
   // Autenticación
   LOGIN: `${BASE_AUTH}/login`,
   LOGOUT: `${BASE_AUTH}/logout`,
+
+  RECYCLING_MAP: `${BASE_URL}/recycling-map`,
 };

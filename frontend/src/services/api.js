@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_ENDPOINTS } from "@/constants/api";
 
-const publicApi = axios.create({
+export const publicApi = axios.create({
   baseURL: API_ENDPOINTS.BASE_URL,
   withCredentials: true,
   headers: {

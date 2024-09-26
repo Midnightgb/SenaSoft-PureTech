@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from crud.user import create_user, get_user_by_email
 from schemas.user import UserCreate, User
-from core.security import verify_password, create_access_token
+from core.security import verify_password, create_access_token, oauth2_scheme, logout
 from db.session import get_db
 
 router = APIRouter()
@@ -40,6 +40,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     access_token = create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
 
-@router.post("/logout")
-def logout():
+@router.get("/logout")
+async def logout_user(token: str = Depends(oauth2_scheme)):
+    logout(token)
     return {"status": True, "message": "Logout successful"}

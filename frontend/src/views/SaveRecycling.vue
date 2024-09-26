@@ -97,7 +97,7 @@ export default {
       earned_points: 0,
       recycling_point_id: 7,
     });
-
+    
     const errorMessage = ref('');
     const successMessage = ref('');
 
@@ -125,8 +125,9 @@ export default {
 
     const submitForm = async () => {
       try {
-        formData.value.user_id = localStorage.getItem('userId');
+        formData.value.user_id = 9;
         formData.value.earned_points = calculatePoints.value;
+        console.log('formData:', formData.value);
 
         const response = await apiClient.post(API_ENDPOINTS.REGISTER_RECYCLING, formData.value);
         console.log('Recycling submitted:', response.data);

@@ -10,6 +10,8 @@ router = APIRouter(dependencies=[Depends(get_current_active_user)])
 
 @router.post("/register", response_model=Recycling)
 def register(recycling: RecyclingCreate, db: Session = Depends(get_db)):
+    for key, value in recycling.dict().items():
+        print(f"{key}: {value}")
     try:
         return create_recycling(db=db, recycling=recycling)
     except ValueError as e:

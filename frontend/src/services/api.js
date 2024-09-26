@@ -18,6 +18,21 @@ export const apiClient = axios.create({
   },
 });
 
+// Interceptor para agregar el token a cada solicitud
+apiClient.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("jwt");
+
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 export const login = async (credentials) => {
   const urlEncodedCredentials = new URLSearchParams();
   for (const key in credentials) {
@@ -54,12 +69,19 @@ export const login = async (credentials) => {
 
 export const logout = async () => {
   try {
-    const response = await apiClient.post(API_ENDPOINTS.LOGOUT);
-    return {
-      success: true,
-      data: response.data,
-    };
+    const response = await apiClient.get(API_ENDPOINTS.LOGOUT);
+    return { success: true, data: response.data };
   } catch (error) {
     return { success: false, error: "Error al cerrar sesión" };
   }
 }
+
+export const fetchUsers = async () => {
+  try {
+    const response = await apiClient.get(API_ENDPOINTS.USERS);
+    return { success: true, data: response.data };
+  } catch (error) {
+    return { success: false, error: "Error al obtener los usuarios" };
+  }  
+}
+

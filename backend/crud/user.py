@@ -4,7 +4,7 @@ from models.user import User
 from schemas.user import UserCreate
 from core.security import get_password_hash
 
-def get_user(db: Session, id: int):
+def get_user_by_id(db: Session, id: int):
     return db.query(User).filter(User.id == id).first()
 
 def get_user_by_email(db: Session, email: str):
@@ -24,3 +24,6 @@ def create_user(db: Session, user: UserCreate):
         else:
             raise
     return db_user
+
+def get_users(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(User).offset(skip).limit(limit).all()

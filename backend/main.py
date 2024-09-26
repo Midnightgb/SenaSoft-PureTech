@@ -2,12 +2,17 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.auth import router as auth_router
 from api.health import router as health_router
-from config import settings
+from api.recycling import router as recycling_router
+from api.recycling_point import router as recycling_point_router
+from api.material import router as material_router
+from core.config import settings
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     description=settings.PROJECT_DESCRIPTION,
     version=settings.PROJECT_VERSION,
+    docs_url="/docs" if settings.DEV else None,
+    redoc_url="/redoc" if settings.DEV else None,
 )
 
 app.add_middleware(
@@ -18,8 +23,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth_router, prefix="/auth", tags=["auth"])
 app.include_router(health_router, prefix="/health", tags=["health"])
+app.include_router(auth_router, prefix="/auth", tags=["auth"])
+app.include_router(recycling_router, prefix="/recycling", tags=["recycling"])
+app.include_router(recycling_point_router, prefix="/recycling_point", tags=["recycling_point"])
+app.include_router(material_router, prefix="/material", tags=["material"])
 
 @app.get("/")
 async def root():

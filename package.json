@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@heroicons/vue": "^2.1.5",
+    "axios": "^1.7.7",
+    "leaflet": "^1.9.4"
+  }
+}

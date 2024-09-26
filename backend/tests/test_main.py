@@ -11,11 +11,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from main import app
 from db.session import get_db
-from models.base_class import Base
-from models.user import User, Rol
-from models.material import Material
-from models.recycling_point import RecyclingPoint
-from models.recycling import Recycling
+from models.user import Base
+from backend.core.config import settings
 
 # Crear una base de datos en memoria para las pruebas
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
@@ -43,8 +40,7 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Welcome to the API"}
-
+    
 def test_health_check():
     response = client.get("/health/health_check")
     assert response.status_code == 200

@@ -4,11 +4,14 @@ from datetime import datetime
 from crud.recycling import create_recycling, get_recycling_by_id, get_recycling_list
 from schemas.recycling import RecyclingCreate, Recycling
 from db.session import get_db
+from core.security import get_current_active_user
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(get_current_active_user)])
 
 @router.post("/register", response_model=Recycling)
 def register(recycling: RecyclingCreate, db: Session = Depends(get_db)):
+    for key, value in recycling.dict().items():
+        print(f"{key}: {value}")
     try:
         return create_recycling(db=db, recycling=recycling)
     except ValueError as e:

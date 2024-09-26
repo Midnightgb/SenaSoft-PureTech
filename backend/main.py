@@ -7,6 +7,10 @@ from api.recycling_point import router as recycling_point_router
 from api.material import router as material_router
 from core.config import settings
 
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+import os
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     description=settings.PROJECT_DESCRIPTION,
@@ -29,9 +33,13 @@ app.include_router(recycling_router, prefix="/recycling", tags=["recycling"])
 app.include_router(recycling_point_router, prefix="/recycling_point", tags=["recycling_point"])
 app.include_router(material_router, prefix="/material", tags=["material"])
 
-@app.get("/")
+app.mount("/templates", StaticFiles(directory="templates"), name="templates")
+
+@app.get("/", response_class=HTMLResponse)
 async def root():
-    return {"message": "Welcome to the API"}
+    with open(os.path.join("templates", "access_denied.html"), "r") as file:
+        html_content = file.read()
+    return HTMLResponse(content=html_content, status_code=200)
 
 if __name__ == "__main__":
     import uvicorn

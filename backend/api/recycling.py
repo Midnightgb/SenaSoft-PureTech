@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from datetime import datetime
 from crud.recycling import create_recycling, get_recycling_by_id, get_recycling_list

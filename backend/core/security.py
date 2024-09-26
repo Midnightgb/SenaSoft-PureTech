@@ -1,6 +1,7 @@
 # core/security.py
 from datetime import datetime, timedelta
 from typing import Optional
+from sqlalchemy.orm import Session
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
@@ -8,6 +9,7 @@ from passlib.context import CryptContext
 from core.config import settings
 from crud.auth import get_user_by_email
 from db.session import get_db
+
 
 SECRET_KEY = settings.SECRET_KEY
 ALGORITHM = settings.ALGORITHM

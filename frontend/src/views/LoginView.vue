@@ -49,6 +49,7 @@
       <div v-if="error" class="mt-2 text-center text-red-500">{{ error }}</div>
       <div class="items-center justify-between hidden">
         <a href="/forgot-password" class="text-sm text-green-600 hover:underline">
+
           ¿Olvidaste tu contraseña?
         </a>
         <a href="/signup" class="flex items-center text-sm text-green-600 hover:underline">
